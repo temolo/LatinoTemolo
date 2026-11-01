@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lessico latino – Vivida Mente 1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,500;0,700;1,500;1,700&family=Alegreya+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- ===== DATABASE: aggiungere qui le nuove lezioni ===== -->
+<script type="application/json" id="db">
+{
+  "libro": "Vivida Mente 1 – Lezioni di latino (Ciuffarella, Diotti)",
+  "lezioni": [
+    {
+      "id": "m2-1decl-f",
+      "titolo": "Modulo 2: femminili della 1ª declinazione, altissima frequenza",
+      "parole": [
+        {"la": "amicitia", "gen": "-ae", "g": "f.", "it": "amicizia"},
+        {"la": "aqua", "gen": "-ae", "g": "f.", "it": "acqua"},
+        {"la": "avaritia", "gen": "-ae", "g": "f.", "it": "avidità", "segnata": true},
+        {"la": "causa", "gen": "-ae", "g": "f.", "it": "causa, motivo"},
+        {"la": "copia", "gen": "-ae", "g": "f.", "it": "abbondanza"},
+        {"la": "cura", "gen": "-ae", "g": "f.", "it": "preoccupazione, cura, affanno; attenzione", "segnata": true},
+        {"la": "fama", "gen": "-ae", "g": "f.", "it": "notizia; fama, reputazione (buona o cattiva)"},
+        {"la": "fortuna", "gen": "-ae", "g": "f.", "it": "sorte", "segnata": true},
+        {"la": "fuga", "gen": "-ae", "g": "f.", "it": "fuga"},
+        {"la": "gloria", "gen": "-ae", "g": "f.", "it": "gloria; prestigio"},
+        {"la": "gratia", "gen": "-ae", "g": "f.", "it": "favore; riconoscenza, ringraziamento"},
+        {"la": "iniuria", "gen": "-ae", "g": "f.", "it": "ingiustizia; offesa"},
+        {"la": "ira", "gen": "-ae", "g": "f.", "it": "ira, sdegno"},
+        {"la": "natura", "gen": "-ae", "g": "f.", "it": "indole, natura; forma"},
+        {"la": "pecunia", "gen": "-ae", "g": "f.", "it": "denaro, somma di denaro"},
+        {"la": "poena", "gen": "-ae", "g": "f.", "it": "pena, punizione"},
+        {"la": "provincia", "gen": "-ae", "g": "f.", "it": "provincia"},
+        {"la": "silva", "gen": "-ae", "g": "f.", "it": "selva, bosco"},
+        {"la": "terra", "gen": "-ae", "g": "f.", "it": "terra"},
+        {"la": "unda", "gen": "-ae", "g": "f.", "it": "onda"},
+        {"la": "via", "gen": "-ae", "g": "f.", "it": "via, cammino; metodo"},
+        {"la": "vita", "gen": "-ae", "g": "f.", "it": "vita"}
+      ]
+    },
+    {
+      "id": "m2-1decl-fm",
+      "titolo": "Modulo 2: femminili e maschili della 1ª declinazione, alta frequenza",
+      "parole": [
+        {"la": "advĕna", "gen": "-ae", "g": "m.", "it": "straniero"},
+        {"la": "agricŏla", "gen": "-ae", "g": "m.", "it": "contadino"},
+        {"la": "ara", "gen": "-ae", "g": "f.", "it": "altare"},
+        {"la": "aura", "gen": "-ae", "g": "f.", "it": "brezza, vento"},
+        {"la": "conviva", "gen": "-ae", "g": "m.", "it": "convitato"},
+        {"la": "domina", "gen": "-ae", "g": "f.", "it": "padrona"},
+        {"la": "epistula", "gen": "-ae", "g": "f.", "it": "lettera"},
+        {"la": "fabula", "gen": "-ae", "g": "f.", "it": "favola"},
+        {"la": "femina", "gen": "-ae", "g": "f.", "it": "femmina"},
+        {"la": "fera", "gen": "-ae", "g": "f.", "it": "fiera, belva"},
+        {"la": "filia", "gen": "-ae", "g": "f.", "it": "figlia"},
+        {"la": "flamma", "gen": "-ae", "g": "f.", "it": "fiamma"},
+        {"la": "forma", "gen": "-ae", "g": "f.", "it": "forma; bellezza", "segnata": true},
+        {"la": "herba", "gen": "-ae", "g": "f.", "it": "erba"},
+        {"la": "historia", "gen": "-ae", "g": "f.", "it": "storia"},
+        {"la": "hora", "gen": "-ae", "g": "f.", "it": "ora"},
+        {"la": "incŏla", "gen": "-ae", "g": "m.", "it": "abitante"},
+        {"la": "industria", "gen": "-ae", "g": "f.", "it": "operosità", "segnata": true},
+        {"la": "insula", "gen": "-ae", "g": "f.", "it": "isola"},
+        {"la": "magistra", "gen": "-ae", "g": "f.", "it": "maestra"},
+        {"la": "materia", "gen": "-ae", "g": "f.", "it": "materia, argomento; causa"},
+        {"la": "matrona", "gen": "-ae", "g": "f.", "it": "matrona"},
+        {"la": "mora", "gen": "-ae", "g": "f.", "it": "indugio, esitazione; ritardo"},
+        {"la": "Musa", "gen": "-ae", "g": "f.", "it": "Musa"},
+        {"la": "nauta", "gen": "-ae", "g": "m.", "it": "marinaio"},
+        {"la": "ora", "gen": "-ae", "g": "f.", "it": "spiaggia", "segnata": true},
+        {"la": "patrona", "gen": "-ae", "g": "f.", "it": "protettrice"},
+        {"la": "pirata", "gen": "-ae", "g": "m.", "it": "pirata"},
+        {"la": "poëta", "gen": "-ae", "g": "m.", "it": "poeta"},
+        {"la": "praeda", "gen": "-ae", "g": "f.", "it": "preda"},
+        {"la": "puella", "gen": "-ae", "g": "f.", "it": "ragazza, bambina"},
+        {"la": "pugna", "gen": "-ae", "g": "f.", "it": "battaglia"},
+        {"la": "sapientia", "gen": "-ae", "g": "f.", "it": "sapienza"},
+        {"la": "sententia", "gen": "-ae", "g": "f.", "it": "parere, giudizio, verdetto"},
+        {"la": "turba", "gen": "-ae", "g": "f.", "it": "tumulto; folla"},
+        {"la": "umbra", "gen": "-ae", "g": "f.", "it": "ombra; parvenza"},
+        {"la": "victoria", "gen": "-ae", "g": "f.", "it": "vittoria"},
+        {"la": "villa", "gen": "-ae", "g": "f.", "it": "fattoria, podere; villa"}
+      ]
+    },
+    {
+      "id": "m2-agg-contrari",
+      "titolo": "Modulo 2: aggettivi qualificativi femminili e contrari",
+      "parole": [
+        {"la": "alta", "g": "agg.", "it": "profonda; alta", "contrario": {"la": "demissa", "it": "bassa"}},
+        {"la": "antiqua", "g": "agg.", "it": "antica", "contrario": {"la": "nova", "it": "nuova, recente"}},
+        {"la": "bona", "g": "agg.", "it": "buona", "contrario": {"la": "mala", "it": "cattiva, malvagia; brutta"}},
+        {"la": "certa", "g": "agg.", "it": "certa, sicura; definita", "contrario": {"la": "incerta", "it": "incerta, malsicura"}},
+        {"la": "clara", "g": "agg.", "it": "famosa, illustre; chiara", "contrario": {"la": "obscura", "it": "sconosciuta; oscura"}},
+        {"la": "digna", "g": "agg.", "it": "degna", "contrario": {"la": "indigna", "it": "indegna"}},
+        {"la": "dura", "g": "agg.", "it": "dura; resistente", "contrario": {"la": "tenera", "it": "tenera; morbida"}},
+        {"la": "grata", "g": "agg.", "it": "grata, gradita", "contrario": {"la": "ingrata", "it": "non gradita, spiacevole"}},
+        {"la": "humana", "g": "agg.", "it": "amabile; educata; umana", "contrario": {"la": "inhumana", "it": "sgarbata; barbara; disumana"}},
+        {"la": "iusta", "g": "agg.", "it": "giusta", "contrario": {"la": "iniusta", "it": "ingiusta"}},
+        {"la": "laeta", "g": "agg.", "it": "lieta", "contrario": {"la": "misera", "it": "infelice; misera"}},
+        {"la": "longa", "g": "agg.", "it": "lunga", "contrario": {"la": "exigua", "it": "esigua, corta"}},
+        {"la": "magna", "g": "agg.", "it": "grande", "contrario": {"la": "parva", "it": "piccola"}},
+        {"la": "multa", "g": "agg.", "it": "molta", "contrario": {"la": "pauca", "it": "poca"}},
+        {"la": "prima", "g": "agg.", "it": "prima", "contrario": {"la": "ultima", "it": "ultima"}},
+        {"la": "pulchra", "g": "agg.", "it": "bella", "contrario": {"la": "foeda", "it": "brutta"}},
+        {"la": "secunda", "g": "agg.", "it": "favorevole", "contrario": {"la": "adversa", "it": "sfavorevole"}},
+        {"la": "vera", "g": "agg.", "it": "vera", "contrario": {"la": "falsa", "it": "falsa"}}
+      ]
+    },
+    {
+      "id": "m2-agg-poss",
+      "titolo": "Modulo 2: aggettivi possessivi femminili",
+      "parole": [
+        {"la": "mea", "g": "agg. poss.", "it": "mia"},
+        {"la": "tua", "g": "agg. poss.", "it": "tua"},
+        {"la": "sua", "g": "agg. poss.", "it": "sua, propria, loro"},
+        {"la": "nostra", "g": "agg. poss.", "it": "nostra"},
+        {"la": "vestra", "g": "agg. poss.", "it": "vostra"}
+      ]
+    },
+    {
+      "id": "m2-congiunzioni",
+      "titolo": "Modulo 2: congiunzioni ad altissima frequenza",
+      "parole": [
+        {"la": "et, -que, atque, ac", "g": "cong.", "it": "e"},
+        {"la": "sed, autem", "g": "cong.", "it": "ma"},
+        {"la": "nam, enim", "g": "cong. (enim va posposto)", "it": "infatti"}
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+:root{
+  --bg:#EFE5D6; --surface:#FAF4EA; --ink:#2B1D18; --muted:#6D5A4F; --line:#D9C8B1;
+  --red:#9C2F24; --red-ink:#FFF3EA; --green:#3D7633; --green-ink:#F2FAEE; --ochre:#B4862B;
+  --serif:"Alegreya", Georgia, "Times New Roman", serif;
+  --sans:"Alegreya Sans", "Trebuchet MS", system-ui, sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1B1311; --surface:#271B18; --ink:#F3E8DD; --muted:#BAA597; --line:#3E2D27;
+    --red:#A93A2E; --red-ink:#FFF1E7; --green:#457F3A; --green-ink:#F0F8EB; --ochre:#D2A548;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1B1311; --surface:#271B18; --ink:#F3E8DD; --muted:#BAA597; --line:#3E2D27;
+  --red:#A93A2E; --red-ink:#FFF1E7; --green:#457F3A; --green-ink:#F0F8EB; --ochre:#D2A548;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.45;-webkit-tap-highlight-color:transparent}
+.wrap{max-width:560px;margin:0 auto;padding:18px 18px 28px}
+
+header h1{font-family:var(--serif);font-weight:700;font-size:1.9rem;line-height:1.1;margin:0}
+header p{margin:4px 0 0;color:var(--muted);font-size:.92rem}
+
+.tabs{display:flex;gap:6px;margin:18px 0 14px;border-bottom:1px solid var(--line)}
+.tabs button{appearance:none;border:0;background:none;color:var(--muted);font:500 1rem var(--sans);padding:8px 4px 10px;margin-right:14px;border-bottom:3px solid transparent;cursor:pointer}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--red)}
+
+.controls{display:grid;gap:10px;margin-bottom:16px}
+select{width:100%;font:500 1rem var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:3px}
+.seg button{appearance:none;border:0;background:none;color:var(--muted);font:500 .95rem var(--sans);padding:8px 4px;border-radius:7px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.check{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.95rem}
+.check input{width:18px;height:18px;accent-color:var(--red)}
+
+.status{display:flex;justify-content:space-between;align-items:baseline;font-size:.92rem;color:var(--muted);margin-bottom:6px}
+.status b{color:var(--ink);font-weight:700}
+.status .ok b{color:var(--green)} .status .ko b{color:var(--red)}
+.track{height:4px;background:var(--line);border-radius:2px;overflow:hidden;margin-bottom:14px}
+.track div{height:100%;width:0;background:var(--ochre);transition:width .25s}
+
+/* ===== card ===== */
+.stage{position:relative;perspective:1200px}
+.card{display:block;width:100%;height:min(52vh,380px);min-height:260px;padding:0;border:0;background:none;cursor:pointer;position:relative;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.3,.7,.3,1);font:inherit;color:inherit}
+.card.flipped{transform:rotateY(180deg)}
+.card.instant{transition:none}
+.face{position:absolute;inset:0;border-radius:6px;backface-visibility:hidden;-webkit-backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px 26px;text-align:center;outline:1px solid rgba(255,236,200,.45);outline-offset:-12px}
+.face.back{transform:rotateY(180deg)}
+.face.la{color:var(--red-ink);background:
+  radial-gradient(90% 70% at 18% 12%,rgba(255,230,200,.16),transparent 60%),
+  radial-gradient(70% 60% at 88% 92%,rgba(40,0,0,.28),transparent 65%),
+  radial-gradient(40% 30% at 70% 30%,rgba(255,210,170,.08),transparent 70%),var(--red)}
+.face.it{color:var(--green-ink);background:
+  radial-gradient(90% 70% at 18% 12%,rgba(230,255,210,.14),transparent 60%),
+  radial-gradient(70% 60% at 88% 92%,rgba(0,25,0,.28),transparent 65%),var(--green)}
+.lang{position:absolute;top:24px;left:28px;font-size:.85rem;opacity:.8}
+.hint{position:absolute;bottom:22px;font-size:.85rem;opacity:.7}
+.word{font-family:var(--serif);font-weight:700;line-height:1.15;overflow-wrap:anywhere}
+.la-word{font-style:italic;font-size:clamp(2.4rem,11vw,3.4rem)}
+.it-word{font-size:clamp(1.5rem,6.5vw,2.1rem)}
+.it-word.long{font-size:clamp(1.25rem,5.2vw,1.6rem)}
+.la-word.long{font-size:clamp(1.7rem,7.5vw,2.3rem)}
+.face.co{color:#2A1A10;background:
+  radial-gradient(90% 70% at 18% 12%,rgba(255,250,225,.30),transparent 60%),
+  radial-gradient(70% 60% at 88% 92%,rgba(90,50,0,.25),transparent 65%),#CF9F3E;outline-color:rgba(60,30,0,.35)}
+.co-it{font-family:var(--serif);font-size:clamp(1.3rem,5.6vw,1.7rem);margin-top:10px}
+ul.words .c{display:block;font-size:.88rem;color:var(--ochre)}
+.gram{font-family:var(--serif);font-style:italic;font-size:1.3rem;margin-top:6px;opacity:.9}
+.star{position:absolute;top:16px;right:16px;z-index:5;width:44px;height:44px;border:0;border-radius:50%;background:rgba(0,0,0,.18);color:rgba(255,255,255,.65);font-size:1.4rem;line-height:44px;cursor:pointer}
+.star[aria-pressed="true"]{color:#FFD873;background:rgba(0,0,0,.28)}
+
+.judge{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.judge button,.btn{appearance:none;border:0;border-radius:10px;padding:14px 10px;font:700 1.05rem var(--sans);cursor:pointer}
+.judge .no{background:var(--surface);color:var(--red);box-shadow:inset 0 0 0 2px var(--red)}
+.judge .yes{background:var(--green);color:var(--green-ink)}
+.judge button:disabled{opacity:.35;cursor:default}
+.keys{text-align:center;color:var(--muted);font-size:.82rem;margin-top:10px}
+@media (hover:none){.keys{display:none}}
+
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px 22px;text-align:center}
+.panel h2{font-family:var(--serif);font-size:1.8rem;margin:0 0 6px}
+.panel p{margin:0 0 18px;color:var(--muted)}
+.panel .btn{display:block;width:100%;margin-top:10px}
+.btn.primary{background:var(--red);color:var(--red-ink)}
+.btn.ghost{background:none;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}
+
+/* ===== list ===== */
+.lesson-title{font-family:var(--serif);font-size:1.15rem;margin:18px 0 6px}
+ul.words{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line);border-radius:10px}
+ul.words li{display:grid;grid-template-columns:36px 1fr auto;gap:2px 8px;align-items:start;padding:10px 12px;border-top:1px solid var(--line)}
+ul.words li:first-child{border-top:0}
+ul.words .s{grid-row:span 2;border:0;background:none;font-size:1.25rem;color:var(--line);cursor:pointer;padding:0;line-height:1.4}
+ul.words .s[aria-pressed="true"]{color:var(--ochre)}
+ul.words .l{font-family:var(--serif)}
+ul.words .l i{font-weight:700}
+ul.words .i{grid-column:2;color:var(--muted);font-size:.95rem}
+ul.words .st{grid-row:1;grid-column:3;font-size:.82rem;color:var(--muted);white-space:nowrap}
+.foot{margin-top:18px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;color:var(--muted);font-size:.85rem}
+.link{background:none;border:0;color:var(--red);font:500 .9rem var(--sans);text-decoration:underline;cursor:pointer;padding:0}
+
+[hidden]{display:none!important}
+button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--ochre);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.card,.track div{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Lessico latino</h1>
+    <p id="book"></p>
+  </header>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" data-view="study" aria-selected="true">Studia</button>
+    <button role="tab" data-view="list" aria-selected="false">Elenco parole</button>
+  </div>
+
+  <div class="controls">
+    <select id="lesson" aria-label="Lezione"></select>
+    <div class="seg" role="group" aria-label="Da quale lingua partire">
+      <button data-mode="la">Dal latino</button>
+      <button data-mode="it">Dall’italiano</button>
+      <button data-mode="mix">Misto</button>
+    </div>
+    <label class="check"><input type="checkbox" id="onlyStars"> Solo le parole segnate con ★</label>
+  </div>
+
+  <!-- STUDIO -->
+  <section id="view-study">
+    <div id="study">
+      <div class="status">
+        <span id="count"></span>
+        <span><span class="ok">Giuste <b id="okN">0</b></span> &nbsp; <span class="ko">Sbagliate <b id="koN">0</b></span></span>
+      </div>
+      <div class="track"><div id="bar"></div></div>
+      <div class="stage">
+        <button class="star" id="star" aria-pressed="false" aria-label="Segna la parola">★</button>
+        <button class="card" id="card" aria-label="Gira la card">
+          <div class="face front" id="front"></div>
+          <div class="face back" id="back"></div>
+        </button>
+      </div>
+      <div class="judge">
+        <button class="no" id="no" disabled>Sbagliato</button>
+        <button class="yes" id="yes" disabled>Giusto</button>
+      </div>
+      <p class="keys">Spazio per girare, ← sbagliato, → giusto</p>
+    </div>
+
+    <div class="panel" id="end" hidden>
+      <h2 id="endTitle"></h2>
+      <p id="endText"></p>
+      <button class="btn primary" id="retryWrong"></button>
+      <button class="btn ghost" id="restart">Ricomincia da capo</button>
+    </div>
+
+    <div class="panel" id="empty" hidden>
+      <h2>Nessuna parola segnata</h2>
+      <p>In questa lezione non ci sono parole con ★. Segnale dall’elenco o studia tutte le parole.</p>
+      <button class="btn primary" id="showAll">Studia tutte le parole</button>
+    </div>
+  </section>
+
+  <!-- ELENCO -->
+  <section id="view-list" hidden>
+    <div id="list"></div>
+    <div class="foot">
+      <span id="total"></span>
+      <button class="link" id="resetStats">Azzera le statistiche</button>
+    </div>
+  </section>
+</div>
+
+<script>
+(function(){
+  const DB = JSON.parse(document.getElementById('db').textContent);
+  const KEY = 'vividamente1-lessico';
+  const $ = s => document.querySelector(s);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  // ogni contrario diventa anche una card a sé, con il primo aggettivo come contrario
+  DB.lezioni.forEach(l => {
+    const out = [];
+    l.parole.forEach(p => {
+      out.push(p);
+      if (p.contrario) out.push({ la: p.contrario.la, it: p.contrario.it, g: p.g, contrario: { la: p.la, it: p.it } });
+    });
+    l.parole = out;
+    l.parole.forEach(p => { p.id = l.id + ':' + p.la; p.lez = l.id; });
+  });
+  const ALL = DB.lezioni.flatMap(l => l.parole);
+
+  // ---- memoria locale (stelle, statistiche, preferenze) ----
+  let store = {stars:{}, stats:{}, prefs:{}, seeded:{}};
+  try { const s = localStorage.getItem(KEY); if (s) store = Object.assign(store, JSON.parse(s)); } catch(e){}
+  ALL.forEach(p => { if (!store.seeded[p.id]) { if (p.segnata) store.stars[p.id] = true; store.seeded[p.id] = true; } });
+  const save = () => { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch(e){} };
+  save();
+  const prefs = Object.assign({mode:'la', lesson:'all', onlyStars:false}, store.prefs);
+  if (prefs.lesson !== 'all' && !DB.lezioni.some(l => l.id === prefs.lesson)) prefs.lesson = 'all';
+  const savePrefs = () => { store.prefs = prefs; save(); };
+
+  $('#book').textContent = DB.libro;
+
+  // ---- controlli ----
+  const sel = $('#lesson');
+  sel.innerHTML = `<option value="all">Tutte le lezioni (${ALL.length} parole)</option>` +
+    DB.lezioni.map(l => `<option value="${esc(l.id)}">${esc(l.titolo)} (${l.parole.length})</option>`).join('');
+  sel.value = prefs.lesson;
+  sel.onchange = () => { prefs.lesson = sel.value; savePrefs(); start(); renderList(); };
+
+  const segBtns = document.querySelectorAll('.seg button');
+  const paintSeg = () => segBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === prefs.mode));
+  segBtns.forEach(b => b.onclick = () => { prefs.mode = b.dataset.mode; savePrefs(); paintSeg(); start(); });
+  paintSeg();
+
+  const only = $('#onlyStars');
+  only.checked = prefs.onlyStars;
+  only.onchange = () => { prefs.onlyStars = only.checked; savePrefs(); start(); };
+
+  document.querySelectorAll('.tabs button').forEach(t => t.onclick = () => {
+    document.querySelectorAll('.tabs button').forEach(x => x.setAttribute('aria-selected', x === t));
+    $('#view-study').hidden = t.dataset.view !== 'study';
+    $('#view-list').hidden = t.dataset.view !== 'list';
+    if (t.dataset.view === 'list') renderList();
+  });
+
+  // ---- sessione di studio ----
+  const card = $('#card'), front = $('#front'), back = $('#back');
+  let S = null;
+
+  const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+  const pool = () => ALL.filter(p => (prefs.lesson === 'all' || p.lez === prefs.lesson) && (!prefs.onlyStars || store.stars[p.id]));
+
+  function start(words){
+    const list = shuffle((words || pool()).slice());
+    S = { deck: list.map(w => ({ w, dir: prefs.mode === 'mix' ? (Math.random() < .5 ? 'la' : 'it') : prefs.mode })), i: 0, ok: [], ko: [], step: 0, done: false };
+    render();
+  }
+
+  function show(which){
+    $('#study').hidden = which !== 'study';
+    $('#end').hidden = which !== 'end';
+    $('#empty').hidden = which !== 'empty';
+  }
+
+  // passi: 0 fronte, 1 retro, 2 contrario (solo per gli aggettivi con contrario)
+  function setStep(step, instant){
+    const { w } = S.deck[S.i];
+    const max = w.contrario ? 2 : 1;
+    if (step === 2) { front.className = 'face front co'; front.innerHTML = contraryFace(w); }
+    S.step = step;
+    if (step >= max) S.done = true;
+    if (instant) card.classList.add('instant');
+    card.style.transform = `rotateY(${step * 180}deg)`;
+    if (instant) { void card.offsetWidth; card.classList.remove('instant'); }
+    $('#no').disabled = $('#yes').disabled = !S.done;
+    card.setAttribute('aria-label', step === 0 ? 'Gira la card' : (step < max ? 'Mostra il contrario' : 'Torna indietro'));
+  }
+  function advance(){
+    if (!S.deck[S.i]) return;
+    const max = S.deck[S.i].w.contrario ? 2 : 1;
+    if (max === 1) setStep(S.step ? 0 : 1);
+    else setStep(S.step === 1 ? 2 : 1);
+  }
+
+  const gram = w => w.gen ? `${w.gen}, ${w.g}` : w.g;
+  const latinFace = w => `<span class="lang">Latino</span><div class="word la-word${w.la.length > 12 ? ' long' : ''}">${esc(w.la)}</div><div class="gram">${esc(gram(w))}</div>`;
+  const contraryFace = w => `<span class="lang">Contrario</span><div class="word la-word">${esc(w.contrario.la)}</div><div class="co-it">${esc(w.contrario.it)}</div>`;
+  const italianFace = w => `<span class="lang">Italiano</span><div class="word it-word${w.it.length > 26 ? ' long' : ''}">${esc(w.it)}</div>`;
+
+  function render(){
+    const n = S.deck.length;
+    $('#okN').textContent = S.ok.length;
+    $('#koN').textContent = S.ko.length;
+    $('#bar').style.width = n ? (S.i / n * 100) + '%' : '0';
+    if (!n) { show('empty'); return; }
+    if (S.i >= n) { showEnd(); return; }
+    show('study');
+    $('#count').innerHTML = `Card <b>${S.i + 1}</b> di ${n}`;
+    const { w, dir } = S.deck[S.i];
+    const hint = '<span class="hint">Tocca per girare</span>';
+    const hint2 = w.contrario ? '<span class="hint">Tocca per il contrario</span>' : '';
+    if (dir === 'la') {
+      front.className = 'face front la'; front.innerHTML = latinFace(w) + hint;
+      back.className = 'face back it';   back.innerHTML = italianFace(w) + hint2;
+    } else {
+      front.className = 'face front it'; front.innerHTML = italianFace(w) + hint;
+      back.className = 'face back la';   back.innerHTML = latinFace(w) + hint2;
+    }
+    S.step = 0; S.done = false;
+    setStep(0, true);
+    $('#star').setAttribute('aria-pressed', !!store.stars[w.id]);
+  }
+
+  function judge(ok){
+    if (!S.done) return;
+    const { w } = S.deck[S.i];
+    const st = store.stats[w.id] || { ok: 0, ko: 0 };
+    ok ? st.ok++ : st.ko++;
+    store.stats[w.id] = st; save();
+    (ok ? S.ok : S.ko).push(w);
+    S.i++;
+    render();
+  }
+
+  function showEnd(){
+    show('end');
+    const n = S.deck.length, ok = S.ok.length, ko = S.ko.length;
+    $('#bar').style.width = '100%';
+    $('#endTitle').textContent = ko === 0 ? 'Optime!' : ok / n >= .8 ? 'Bene!' : 'Giro finito';
+    $('#endText').textContent = ko === 0
+      ? `Tutte giuste: ${ok} su ${n}.`
+      : `${ok} giuste su ${n}. Ripassa le sbagliate finché non le sai tutte.`;
+    const r = $('#retryWrong');
+    r.hidden = ko === 0;
+    r.textContent = ko === 1 ? 'Ripassa l’unica sbagliata' : `Ripassa le ${ko} sbagliate`;
+  }
+
+  card.onclick = () => advance();
+  $('#yes').onclick = () => judge(true);
+  $('#no').onclick = () => judge(false);
+  $('#retryWrong').onclick = () => start(S.ko);
+  $('#restart').onclick = () => start();
+  $('#showAll').onclick = () => { only.checked = prefs.onlyStars = false; savePrefs(); start(); };
+  $('#star').onclick = () => {
+    const { w } = S.deck[S.i];
+    store.stars[w.id] = !store.stars[w.id]; save();
+    $('#star').setAttribute('aria-pressed', !!store.stars[w.id]);
+  };
+
+  document.addEventListener('keydown', e => {
+    if ($('#view-study').hidden || $('#study').hidden) return;
+    const tag = e.target.tagName;
+    if (e.key === ' ' && tag !== 'BUTTON' && tag !== 'SELECT' && tag !== 'INPUT') { e.preventDefault(); advance(); }
+    if (e.key === 'ArrowRight') judge(true);
+    if (e.key === 'ArrowLeft') judge(false);
+  });
+
+  // ---- elenco ----
+  function renderList(){
+    const lessons = DB.lezioni.filter(l => prefs.lesson === 'all' || l.id === prefs.lesson);
+    $('#list').innerHTML = lessons.map(l => `
+      <h3 class="lesson-title">${esc(l.titolo)}</h3>
+      <ul class="words">${l.parole.map(p => {
+        const st = store.stats[p.id];
+        return `<li>
+          <button class="s" data-id="${esc(p.id)}" aria-pressed="${!!store.stars[p.id]}" aria-label="Segna ${esc(p.la)}">★</button>
+          <span class="l"><i>${esc(p.la)}</i>, ${esc(gram(p))}</span>
+          <span class="st">${st ? `✓${st.ok} ✗${st.ko}` : ''}</span>
+          <span class="i">${esc(p.it)}${p.contrario ? `<span class="c">contrario: <i>${esc(p.contrario.la)}</i>, ${esc(p.contrario.it)}</span>` : ''}</span>
+        </li>`; }).join('')}</ul>`).join('');
+    const stars = ALL.filter(p => store.stars[p.id]).length;
+    $('#total').textContent = `${ALL.length} parole in tutto, ${stars} segnate`;
+    document.querySelectorAll('ul.words .s').forEach(b => b.onclick = () => {
+      const id = b.dataset.id; store.stars[id] = !store.stars[id]; save();
+      b.setAttribute('aria-pressed', !!store.stars[id]);
+      $('#total').textContent = `${ALL.length} parole in tutto, ${ALL.filter(p => store.stars[p.id]).length} segnate`;
+    });
+  }
+
+  $('#resetStats').onclick = () => {
+    if (confirm('Azzerare le statistiche di tutte le parole? Le stelle restano.')) { store.stats = {}; save(); renderList(); }
+  };
+
+  start();
+})();
+</script>
+</body>
+</html>
