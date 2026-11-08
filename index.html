@@ -227,6 +227,8 @@ header .upd b{color:var(--ink);font-weight:700}
 .controls{display:grid;gap:10px;margin-bottom:16px}
 select{width:100%;font:500 1rem var(--sans);color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
 .seg{display:grid;grid-template-columns:repeat(3,1fr);background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:3px}
+.seg.four{grid-template-columns:repeat(4,1fr)}
+.lbl{display:block;font-size:.82rem;color:var(--muted);margin:0 0 4px 2px}
 .seg button{appearance:none;border:0;background:none;color:var(--muted);font:500 .95rem var(--sans);padding:8px 4px;border-radius:7px;cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .check{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:.95rem}
@@ -325,10 +327,22 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
 
   <div class="controls">
     <select id="lesson" aria-label="Lezione"></select>
-    <div class="seg" role="group" aria-label="Da quale lingua partire">
+    <div>
+      <span class="lbl" id="typeLbl">Tipo di parole</span>
+      <div class="seg four" id="typeSeg" role="group" aria-labelledby="typeLbl">
+        <button data-type="all">Tutte</button>
+        <button data-type="sost">Sostantivi</button>
+        <button data-type="agg">Aggettivi</button>
+        <button data-type="verbi">Verbi</button>
+      </div>
+    </div>
+    <div>
+    <span class="lbl" id="modeLbl">Si parte da</span>
+    <div class="seg" id="modeSeg" role="group" aria-labelledby="modeLbl">
       <button data-mode="la">Dal latino</button>
       <button data-mode="it">Dall’italiano</button>
       <button data-mode="mix">Misto</button>
+    </div>
     </div>
     <label class="check"><input type="checkbox" id="onlyStars"> Solo le parole segnate con ★</label>
   </div>
@@ -363,9 +377,9 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
     </div>
 
     <div class="panel" id="empty" hidden>
-      <h2>Nessuna parola segnata</h2>
-      <p>In questa lezione non ci sono parole con ★. Segnale dall’elenco o studia tutte le parole.</p>
-      <button class="btn primary" id="showAll">Studia tutte le parole</button>
+      <h2>Nessuna card da studiare</h2>
+      <p id="emptyText"></p>
+      <button class="btn primary" id="showAll">Studia tutte le card</button>
     </div>
   </section>
 
@@ -404,7 +418,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
   ALL.forEach(p => { if (!store.seeded[p.id]) { if (p.segnata) store.stars[p.id] = true; store.seeded[p.id] = true; } });
   const save = () => { try { localStorage.setItem(KEY, JSON.stringify(store)); } catch(e){} };
   save();
-  const prefs = Object.assign({mode:'la', lesson:'all', onlyStars:false}, store.prefs);
+  const prefs = Object.assign({mode:'la', lesson:'all', onlyStars:false, type:'all'}, store.prefs);
   if (prefs.lesson !== 'all' && !DB.lezioni.some(l => l.id === prefs.lesson)) prefs.lesson = 'all';
   const savePrefs = () => { store.prefs = prefs; save(); };
 
@@ -425,7 +439,12 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
   sel.value = prefs.lesson;
   sel.onchange = () => { prefs.lesson = sel.value; savePrefs(); start(); renderList(); };
 
-  const segBtns = document.querySelectorAll('.seg button');
+  const typeBtns = document.querySelectorAll('#typeSeg button');
+  const paintType = () => typeBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.type === prefs.type));
+  typeBtns.forEach(b => b.onclick = () => { prefs.type = b.dataset.type; savePrefs(); paintType(); start(); renderList(); });
+  paintType();
+
+  const segBtns = document.querySelectorAll('#modeSeg button');
   const paintSeg = () => segBtns.forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === prefs.mode));
   segBtns.forEach(b => b.onclick = () => { prefs.mode = b.dataset.mode; savePrefs(); paintSeg(); start(); });
   paintSeg();
@@ -446,7 +465,10 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
   let S = null;
 
   const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
-  const pool = () => ALL.filter(p => (prefs.lesson === 'all' || p.lez === prefs.lesson) && (!prefs.onlyStars || store.stars[p.id]));
+  // tipo di parola: verbi (hanno il paradigma), sostantivi (hanno il genitivo), aggettivi (agg., compresi i possessivi)
+  const kind = p => p.par ? 'verbi' : p.gen ? 'sost' : /^agg\./.test(p.g) ? 'agg' : 'altro';
+  const typeOk = p => prefs.type === 'all' || kind(p) === prefs.type;
+  const pool = () => ALL.filter(p => (prefs.lesson === 'all' || p.lez === prefs.lesson) && typeOk(p) && (!prefs.onlyStars || store.stars[p.id]));
 
   function start(words){
     const list = shuffle((words || pool()).slice());
@@ -492,7 +514,13 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
     $('#okN').textContent = S.ok.length;
     $('#koN').textContent = S.ko.length;
     $('#bar').style.width = n ? (S.i / n * 100) + '%' : '0';
-    if (!n) { show('empty'); return; }
+    if (!n) {
+      const tipi = { sost: 'sostantivi', agg: 'aggettivi', verbi: 'verbi' };
+      $('#emptyText').textContent = 'Con i filtri scelti non ci sono card' +
+        (prefs.type !== 'all' ? ` (${tipi[prefs.type]}` + (prefs.lesson !== 'all' ? ' in questa lezione' : '') + ')' : '') +
+        (prefs.onlyStars ? ', tra le parole segnate con ★' : '') + '. Cambia lezione o tipo, oppure studia tutto.';
+      show('empty'); return;
+    }
     if (S.i >= n) { showEnd(); return; }
     show('study');
     $('#count').innerHTML = `Card <b>${S.i + 1}</b> di ${n}`;
@@ -539,7 +567,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
   $('#no').onclick = () => judge(false);
   $('#retryWrong').onclick = () => start(S.ko);
   $('#restart').onclick = () => start();
-  $('#showAll').onclick = () => { only.checked = prefs.onlyStars = false; savePrefs(); start(); };
+  $('#showAll').onclick = () => { only.checked = prefs.onlyStars = false; prefs.type = 'all'; prefs.lesson = 'all'; sel.value = 'all'; savePrefs(); paintType(); start(); renderList(); };
   $('#star').onclick = () => {
     const { w } = S.deck[S.i];
     store.stars[w.id] = !store.stars[w.id]; save();
@@ -556,10 +584,11 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
 
   // ---- elenco ----
   function renderList(){
-    const lessons = DB.lezioni.filter(l => prefs.lesson === 'all' || l.id === prefs.lesson);
-    $('#list').innerHTML = lessons.map(l => `
+    const lessons = DB.lezioni.filter(l => (prefs.lesson === 'all' || l.id === prefs.lesson) && l.parole.some(typeOk));
+    $('#list').innerHTML = lessons.length ? '' : '<p class="lbl">Nessuna parola di questo tipo nella lezione scelta.</p>';
+    $('#list').innerHTML += lessons.map(l => `
       <h3 class="lesson-title">${esc(l.titolo)}</h3>
-      <ul class="words">${l.parole.map(p => {
+      <ul class="words">${l.parole.filter(typeOk).map(p => {
         const st = store.stats[p.id];
         return `<li>
           <button class="s" data-id="${esc(p.id)}" aria-pressed="${!!store.stars[p.id]}" aria-label="Segna ${esc(p.la)}">★</button>
